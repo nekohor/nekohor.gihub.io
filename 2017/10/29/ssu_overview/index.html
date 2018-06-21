@@ -18,17 +18,18 @@
 </ul>
 <h3 id="包络线计算"><a href="#包络线计算" class="headerlink" title="包络线计算"></a>包络线计算</h3><p>包络线计算实际反映了轧机的板形控制能力或板形控制极限。首先要确定弯窜辊的软硬极限，再进行凸度分配操作。</p>
 <p>执行机构的软硬极限确定了UFD均载辊缝单位凸度的极限。如下面的公式所示，最小的弯辊力和最大的窜辊位置对应最大的UFD均载辊缝凸度；最大的弯辊力和最小的窜辊位置对应了最小的UFD均载辊缝凸度。</p>
-<p>$$<br>Cp_{ufd}|<em>{max} = func(F</em>{b}(min),Sp(max),\theta_{pc}(max))<br>$$</p>
-<p>$$<br>Cp_{ufd}|<em>{min} = func(F</em>{b}(max),Sp(min),\theta_{pc}(min))<br>$$</p>
-<p>公式中，$F_{b}$为弯辊力，$Sp$为窜辊位置，$\theta_{pc}$为PC角角度。</p>
-<p>根据最大最小UFD均载辊缝凸度可以确定最大最小的入口有效单位凸度。<br>$$<br>Cp_{entry_effct}|<em>{max} = Cp</em>{ufd}|<em>{max}-\epsilon</em>{cb}\cdot \frac{K_{chg_attn}}{K_{pce_infl}}<br>$$</p>
-<p>$$<br>Cp_{entry_effct}|<em>{min} = Cp</em>{ufd}|<em>{min}-\epsilon</em>{we}\cdot \frac{K_{chg_attn}}{K_{pce_infl}}<br>$$</p>
-<p>带钢的屈曲极限或临界浪形决定了每一个机架有效单位凸度的改变量。如下图所示，注意上限代表双边浪的极限，下限代表中浪的极限，两极限中间的区域表征良好板形，超出这个区间的范围表征浪形缺陷。</p>
+<script type="math/tex; mode=display">
+Cp_{ufd}|_{max} = func(F_{b}(min),Sp(max),\theta_{pc}(max))</script><script type="math/tex; mode=display">
+Cp_{ufd}|_{min} = func(F_{b}(max),Sp(min),\theta_{pc}(min))</script><p>公式中，$F_{b}$为弯辊力，$Sp$为窜辊位置，$\theta_{pc}$为PC角角度。</p>
+<p>根据最大最小UFD均载辊缝凸度可以确定最大最小的入口有效单位凸度。</p>
+<script type="math/tex; mode=display">
+Cp_{entry\_effct}|_{max} = Cp_{ufd}|_{max}-\epsilon_{cb}\cdot \frac{K_{chg\_attn}}{K_{pce\_infl}}</script><script type="math/tex; mode=display">
+Cp_{entry\_effct}|_{min} = Cp_{ufd}|_{min}-\epsilon_{we}\cdot \frac{K_{chg\_attn}}{K_{pce\_infl}}</script><p>带钢的屈曲极限或临界浪形决定了每一个机架有效单位凸度的改变量。如下图所示，注意上限代表双边浪的极限，下限代表中浪的极限，两极限中间的区域表征良好板形，超出这个区间的范围表征浪形缺陷。</p>
 <p><img src="/2017/10/29/ssu_overview/浪形判别.png" alt="浪形判别"></p>
 <p>每个机架的最大的双边浪改变量$\Delta Cp_{we}$和最大的中浪改变量$\Delta Cp_{cb}$构成了各个机架的板形调整能力。</p>
-<p>$$<br>\Delta Cp_{we} = \epsilon_{we} \cdot \frac{1 - K_{pce _infl} \cdot (1-(1 - f_{prf _rlf} ) \cdot f_{strn_rlf})}{K_{pce_infl}}<br>$$</p>
-<p>$$<br>\Delta Cp_{cb} = \epsilon_{cb} \cdot \frac{1 - K_{pce _infl} \cdot (1-(1 - f_{prf _rlf} ) \cdot f_{strn_rlf})}{K_{pce_infl}}<br>$$</p>
-<p>已知执行机构约束和带钢浪形约束的条件下，我们协调这二者以获得各个机架的带钢凸度包络线。</p>
+<script type="math/tex; mode=display">
+\Delta Cp_{we} = \epsilon_{we} \cdot \frac{1 - K_{pce \_infl} \cdot (1-(1 - f_{prf \_rlf} ) \cdot f_{strn\_rlf})}{K_{pce\_infl}}</script><script type="math/tex; mode=display">
+\Delta Cp_{cb} = \epsilon_{cb} \cdot \frac{1 - K_{pce \_infl} \cdot (1-(1 - f_{prf \_rlf} ) \cdot f_{strn\_rlf})}{K_{pce\_infl}}</script><p>已知执行机构约束和带钢浪形约束的条件下，我们协调这二者以获得各个机架的带钢凸度包络线。</p>
 <p>协调包络线过程中最重要的一个原则就是，上一个机架的出口单位凸度必须在当前机架的执行机构极限范围内，同时也要在下一个机架的凸度改变范围内。</p>
 <p>如下图所示为协调后的包络线。</p>
 <p><img src="/2017/10/29/ssu_overview/coordinate_env.png" alt="coordinate_env"></p>
@@ -37,23 +38,25 @@
 <p>再看看包络线下限的情况。F4的红色线位置受到F5和F6浪形判别极限的限制，如果我们想把F4的红色线位置下移，必然导致带钢在F5和F6出现双边浪。</p>
 <p>在这幅图中，红色线区域内是板形模型进行凸度分配的调整空间。板形模型根据包络线的情况对PDI目标凸度进行分解。</p>
 <h3 id="凸度分配阶段"><a href="#凸度分配阶段" class="headerlink" title="凸度分配阶段"></a>凸度分配阶段</h3><p>F7的出入口目标单位凸度可由PDI目标凸度和操作工补偿值决定。如下式。</p>
-<p>$$<br>Cp_{target} = \frac{ C_{pdi} + C_{op_offset}}{ h }<br>$$</p>
-<p>!!! note “空过与否”<br>    本文假定轧制过程中F1到F7均为非空过机架。</p>
+<script type="math/tex; mode=display">
+Cp_{target} = \frac{ C_{pdi} + C_{op\_offset}}{ h }</script><p>!!! note “空过与否”<br>    本文假定轧制过程中F1到F7均为非空过机架。</p>
 <p>如果F7的目标单位凸度超出包络线的要求，则需要对F7目标单位凸度进行调整。接着从后往前一个机架一个机架地计算出出口的有效单位凸度范围。</p>
 <p>入口有效单位凸度分配要考虑每个机架的板形控制能力。每个机架的凸度可变量$\Delta Cp$累加为整个精轧轧机的凸度改变总量$\sum_{i=1}^{n=7} \Delta Cp$。每个机架的凸度可变量$\Delta Cp$和整个精轧轧机的凸度改变总量$\sum_{i=1}^{n=7} \Delta Cp$之间的比值，是每个机架入口有效单位凸度分配的基准。</p>
 <p>每个机架入口的有效单位凸度分配入下图所示。</p>
-<p>$$<br>Cp _{entry_effect} ^{i} = Cp _{entry_effect} ^{i} - \frac{ \Delta Cp }{ \sum_{i=1}^{n=7} \Delta Cp } \cdot ( Cp _{exit_effect} ^{i} - Cp _{exit_effect} ^{1} )<br>$$</p>
-<p>出入口有效单位凸度分配完后，接着计算各个机架的出口应变差。入下式所示。</p>
-<p>$$<br>\epsilon^{i} = K_{pce_infl} \cdot \frac{ Cp_{exit_effect} ^{i} - Cp_{entry_effect} ^{i} }{ 1 - f_{prf_recv} \cdot f_{strn_rlf} \cdot K_{pce_infl} }<br>$$</p>
-<p>如果出口应变差超出了浪形判别的极限，说明容易出现浪形，那么对相应机架的入口有效单位凸度需要按下式重新计算。</p>
-<p>$$<br>Cp_{entry_effect}^{i} = Cp_{exit_effect} ^{i} - \frac{ 1 - f_{prf_recv} \cdot f_{strn_rlf} \cdot K_{pce_infl} }{ K_{pce_infl} } \cdot \epsilon^{i}<br>$$</p>
-<h3 id="计算弯窜辊设定值"><a href="#计算弯窜辊设定值" class="headerlink" title="计算弯窜辊设定值"></a>计算弯窜辊设定值</h3><p>单位凸度分配结束后，板形模型根据各个机架的板形控制能力计算板形执行机构（弯辊和窜辊）的设定值。弯窜辊的设定值，从F7机架开始从后往前计算。</p>
+<script type="math/tex; mode=display">
+Cp _{entry\_effect} ^{i} = Cp _{entry\_effect} ^{i} - \frac{ \Delta Cp }{ \sum_{i=1}^{n=7} \Delta Cp } \cdot ( Cp _{exit\_effect} ^{i} - Cp _{exit\_effect} ^{1} )</script><p>出入口有效单位凸度分配完后，接着计算各个机架的出口应变差。入下式所示。</p>
+<script type="math/tex; mode=display">
+\epsilon^{i} = K_{pce\_infl} \cdot \frac{ Cp_{exit\_effect} ^{i} - Cp_{entry\_effect} ^{i} }{ 1 - f_{prf\_recv} \cdot f_{strn\_rlf} \cdot K_{pce\_infl} }</script><p>如果出口应变差超出了浪形判别的极限，说明容易出现浪形，那么对相应机架的入口有效单位凸度需要按下式重新计算。</p>
+<script type="math/tex; mode=display">
+Cp_{entry\_effect}^{i} = Cp_{exit\_effect} ^{i} - \frac{ 1 - f_{prf\_recv} \cdot f_{strn\_rlf} \cdot K_{pce\_infl} }{ K_{pce\_infl} } \cdot \epsilon^{i}</script><h3 id="计算弯窜辊设定值"><a href="#计算弯窜辊设定值" class="headerlink" title="计算弯窜辊设定值"></a>计算弯窜辊设定值</h3><p>单位凸度分配结束后，板形模型根据各个机架的板形控制能力计算板形执行机构（弯辊和窜辊）的设定值。弯窜辊的设定值，从F7机架开始从后往前计算。</p>
 <p>!!! note “设定值计算顺序”<br>    弯窜辊设定值的计算顺序是可配置的，一般先计算窜辊再计算弯辊，这样的顺序能够使板形控制更有伸缩性。</p>
 <p>各个机架的UFD目标均载辊缝单位凸度，通过出入口的有效单位凸度计算。</p>
-<p>$$<br>Cp_{ufd_target} = Cp_{entry_effect} +<br>\frac{K_{chg_attn}}{1 - K_{pce_infl} + (1 - f_{prf_rlf}) \cdot f_{strn_rlf} \cdot K_{pce_infl}}<br>\cdot (Cp_{exit_effect} - Cp_{entry_effect})<br>$$</p>
-<p>而现有的UFD均载辊缝单位凸度，利用精轧的辊系凸度，通过UFD模块的线性回归计算。目标UFD均载辊缝凸度和现有的UFD均载辊缝凸度之间的差值，就是弯窜辊执行机构的调整量。窜辊位置的计算通过等效凸度和窜辊位置之间的迭代计算获得，弯辊力的计算参照以下的式子。</p>
-<p>$$<br>F_{bnd} = \frac{C_{ufd_target} - C_{ufd}}{B_{6} + B_{7} \cdot P + B_{8} \cdot p^{2} + B_{11} + B_{14}}<br>$$</p>
-<p>弯窜辊设定完后，重新计算UFD均载辊缝单位凸度。如果重计算的UFD均载辊缝单位凸度和目标UFD均载辊缝单位凸度之间的差值仍然不能满足板形质量要求，说明超出了板形执行机构的控制能力，容易出现凸度不命中或批量浪形等板形缺陷。必要的情况下，重新进行载荷分配。</p>
+<script type="math/tex; mode=display">
+Cp_{ufd\_target} = Cp_{entry\_effect} + 
+\frac{K_{chg\_attn}}{1 - K_{pce\_infl} + (1 - f_{prf\_rlf}) \cdot f_{strn\_rlf} \cdot K_{pce\_infl}} 
+\cdot (Cp_{exit\_effect} - Cp_{entry\_effect})</script><p>而现有的UFD均载辊缝单位凸度，利用精轧的辊系凸度，通过UFD模块的线性回归计算。目标UFD均载辊缝凸度和现有的UFD均载辊缝凸度之间的差值，就是弯窜辊执行机构的调整量。窜辊位置的计算通过等效凸度和窜辊位置之间的迭代计算获得，弯辊力的计算参照以下的式子。</p>
+<script type="math/tex; mode=display">
+F_{bnd} = \frac{C_{ufd\_target} - C_{ufd}}{B_{6} + B_{7} \cdot P + B_{8} \cdot p^{2} + B_{11} + B_{14}}</script><p>弯窜辊设定完后，重新计算UFD均载辊缝单位凸度。如果重计算的UFD均载辊缝单位凸度和目标UFD均载辊缝单位凸度之间的差值仍然不能满足板形质量要求，说明超出了板形执行机构的控制能力，容易出现凸度不命中或批量浪形等板形缺陷。必要的情况下，重新进行载荷分配。</p>
 <h3 id="板形的评估"><a href="#板形的评估" class="headerlink" title="板形的评估"></a>板形的评估</h3><p>当已知带钢的入口状态和板形执行机构的设定值后，带钢的出口状态随之确定。这时，板形模型从F1开始往后依次评估每个道次的板形状态。当带钢的出口应变差超过了临界浪形极限的范围，板形模型利用弯辊机构对带钢的浪形进行调整，如果弯辊机构不能满足浪形调整的需求，则模型重新计算凸度削弱因子。</p>
 </div></article></div></main><footer><div class="paginator"><a href="/2017/10/29/cvc_roll_design/" class="next">下一篇</a></div><div class="copyright"><p>© 2017 - 2018 <a href="http://nekohor.com">王宇阳  Nekohor</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><!-- mathjax config similar to math.stackexchange--><script type="text/x-mathjax-config">MathJax.Hub.Config({
 jax: ["input/TeX", "output/HTML-CSS"],   # 可以更改mathjax的默认输出样式
